@@ -1,4 +1,6 @@
 #Задание 1
+
+import math
 while True:
     num1 = float(input("Введите первое число: "))
     num2 = float(input("Введите второе число: "))
@@ -8,6 +10,7 @@ while True:
     print("-. Вычитание")
     print("*. Умножение")
     print(":. Деление")
+    print("**. Возведение в степень")
     print("End. Выйти")
 
     choice = input("Введите операцию (+/-/*/:/End): ")
@@ -17,7 +20,7 @@ while True:
         print("Выход из программы.")
         break
 
-    if choice in ('+', '-', '*', '4'):
+    if choice in ('+', '-', '*', ':','**'):
         if choice == '+':
             result = num1 + num2
             operation = "сложения"
@@ -34,6 +37,9 @@ while True:
             else:
                 result = num1 / num2
                 operation = "деления"
+        elif choice == '**':
+            result = math.pow(num1, num2)
+            operation = "возведения в степень"
 
         print(f"Результат {operation}: {result}")
     else:
